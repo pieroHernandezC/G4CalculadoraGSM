@@ -661,26 +661,26 @@ public class Calculadora extends javax.swing.JFrame {
     private void btnInversaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInversaActionPerformed
         primerNumero = Double.parseDouble(cadenaNumeros);
         switch (cadenaNumeros){
-            case "1" -> {
+            case "1" : 
                 etiquetaMuestra.setText("1/(" + cadenaNumeros + ")");
                 etiquetaNumeros.setText("" + 1);
                 funcionUsada = true;
                 cadenaNumeros = String.valueOf(1); // convertimos el valor a cadena
-            }
-            case "-1" -> {
+                break;
+            case "-1" : 
                 etiquetaMuestra.setText("1/(" + cadenaNumeros + ")");
                 etiquetaNumeros.setText("-" + 1);
                 funcionUsada = true;
                 cadenaNumeros = String.valueOf(-1); // convertimos el valor a cadena
-            }
-            case "0" -> {
+                break;
+            case "0" :
                 etiquetaNumeros.setFont(etiquetaNumeros.getFont().deriveFont(24f));
                 etiquetaMuestra.setText("1/(" + cadenaNumeros + ")");
                 etiquetaNumeros.setText("No se puede dividir entre cero");
                 funcionUsada = true;
                 cadenaNumeros = String.valueOf(0); // convertimos el valor a cadena
-            }
-            default -> {
+                break;
+            default :
                 etiquetaMuestra.setText("1/(" + cadenaNumeros + ")");
                 resultado = 1 / primerNumero;
                 String resultadoEnPantalla = String.format("%.15f", resultado);
@@ -695,7 +695,6 @@ public class Calculadora extends javax.swing.JFrame {
                 etiquetaNumeros.setText(trimmedresultadoEnPantalla);
                 funcionUsada = true;
                 cadenaNumeros = String.valueOf(trimmedresultadoEnPantalla); // convertimos el valor a cadena
-            }
         }
     }//GEN-LAST:event_btnInversaActionPerformed
 

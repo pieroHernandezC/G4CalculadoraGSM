@@ -7,6 +7,7 @@ package calculadora;
 
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -56,7 +57,7 @@ public class Calculadora extends javax.swing.JFrame {
         jButton40 = new javax.swing.JButton();
         jButton38 = new javax.swing.JButton();
         botonSumar = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        botonPotenciaCubica = new javax.swing.JButton();
         jButton41 = new javax.swing.JButton();
         jButton42 = new javax.swing.JButton();
         botonPunto = new javax.swing.JButton();
@@ -248,8 +249,13 @@ public class Calculadora extends javax.swing.JFrame {
         });
         panel.add(botonSumar);
 
-        jButton5.setText("X³");
-        panel.add(jButton5);
+        botonPotenciaCubica.setText("X³");
+        botonPotenciaCubica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonPotenciaCubicaActionPerformed(evt);
+            }
+        });
+        panel.add(botonPotenciaCubica);
 
         jButton41.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton41.setText("+/-");
@@ -484,6 +490,11 @@ public class Calculadora extends javax.swing.JFrame {
             operacion = "nula";
         }
         
+        else if (operacion.equals("elevarCubo")){
+            System.out.println("resultado: "+resultado);
+            cadenaNumeros = String.valueOf(resultado);
+        }
+        
         etiquetaMuestra.setText("");
         activado = true;
         punto = false;
@@ -603,6 +614,25 @@ public class Calculadora extends javax.swing.JFrame {
         cadenaNumeros = String.valueOf(resultado); //convertimos el valor a cadena
     }//GEN-LAST:event_btnElevarCuadradoActionPerformed
 
+    private void botonPotenciaCubicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPotenciaCubicaActionPerformed
+        double segundoNumero;
+        segundoNumero = Double.parseDouble(cadenaNumeros);
+        etiquetaMuestra.setText(cadenaNumeros+"^3");
+        operacion = "potenciaCubica";
+        
+        DecimalFormat decimalFormat;
+        if (!cadenaNumeros.contains(".")) {
+            decimalFormat = new DecimalFormat("#");
+        } else {
+            decimalFormat = new DecimalFormat("#.####");
+        }
+        
+        resultado = Math.pow(segundoNumero,3);
+        etiquetaNumeros.setText(decimalFormat.format(resultado));
+        cadenaNumeros = String.valueOf(resultado);
+        operacion = "nula";
+    }//GEN-LAST:event_botonPotenciaCubicaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -648,16 +678,15 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JButton botonDivision;
     private javax.swing.JButton botonIgual;
     private javax.swing.JButton botonMultiplicar;
+    private javax.swing.JButton botonPotenciaCubica;
     private javax.swing.JButton botonPunto;
     private javax.swing.JButton botonRaiz;
     private javax.swing.JButton botonRestar;
     private javax.swing.JButton botonSumar;
-    private javax.swing.JButton butonPorcentaje;
     private javax.swing.JButton btnElevarCuadrado;
+    private javax.swing.JButton butonPorcentaje;
     private javax.swing.JLabel etiquetaMuestra;
     private javax.swing.JLabel etiquetaNumeros;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
@@ -670,7 +699,6 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JButton jButton40;
     private javax.swing.JButton jButton41;
     private javax.swing.JButton jButton42;
-    private javax.swing.JButton jButton5;
     private javax.swing.JPanel panel;
     // End of variables declaration//GEN-END:variables
 }

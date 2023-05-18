@@ -192,6 +192,11 @@ public class Calculadora extends javax.swing.JFrame {
         panel.add(botonRestar);
 
         jButton4.setText("X²");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         panel.add(jButton4);
 
         jButton37.setBackground(new java.awt.Color(204, 204, 204));
@@ -543,6 +548,17 @@ public class Calculadora extends javax.swing.JFrame {
             etiquetaNumeros.setText(cadenaNumeros);
         }
     }//GEN-LAST:event_botonCEActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        //Modificación del código: WIlfredo Huallpartupa
+        
+        primerNumero = Double.parseDouble(cadenaNumeros);
+        etiquetaMuestra.setText("("+cadenaNumeros+")²");
+        resultado = Math.pow(primerNumero, 2);
+        etiquetaNumeros.setText(String.format("%.2f", resultado));
+        cadenaNumeros = String.valueOf(resultado); //convertimos el valor a cadena
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments

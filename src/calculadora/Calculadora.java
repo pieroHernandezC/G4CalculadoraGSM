@@ -51,7 +51,7 @@ public class Calculadora extends javax.swing.JFrame {
         jButton33 = new javax.swing.JButton();
         jButton34 = new javax.swing.JButton();
         botonRestar = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnElevarCuadrado = new javax.swing.JButton();
         jButton37 = new javax.swing.JButton();
         jButton40 = new javax.swing.JButton();
         jButton38 = new javax.swing.JButton();
@@ -201,8 +201,13 @@ public class Calculadora extends javax.swing.JFrame {
         });
         panel.add(botonRestar);
 
-        jButton4.setText("X²");
-        panel.add(jButton4);
+        btnElevarCuadrado.setText("X²");
+        btnElevarCuadrado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnElevarCuadradoActionPerformed(evt);
+            }
+        });
+        panel.add(btnElevarCuadrado);
 
         jButton37.setBackground(new java.awt.Color(204, 204, 204));
         jButton37.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -587,6 +592,16 @@ public class Calculadora extends javax.swing.JFrame {
             activado = false;
         }
     }//GEN-LAST:event_PotenciaNActionPerformed
+    private void btnElevarCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElevarCuadradoActionPerformed
+        // TODO add your handling code here:
+        //Modificación del código: WIlfredo Huallpartupa
+        
+        primerNumero = Double.parseDouble(cadenaNumeros);
+        etiquetaMuestra.setText("("+cadenaNumeros+")²");
+        resultado = Math.pow(primerNumero, 2);
+        etiquetaNumeros.setText(String.format("%.2f", resultado));
+        cadenaNumeros = String.valueOf(resultado); //convertimos el valor a cadena
+    }//GEN-LAST:event_btnElevarCuadradoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -638,6 +653,7 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JButton botonRestar;
     private javax.swing.JButton botonSumar;
     private javax.swing.JButton butonPorcentaje;
+    private javax.swing.JButton btnElevarCuadrado;
     private javax.swing.JLabel etiquetaMuestra;
     private javax.swing.JLabel etiquetaNumeros;
     private javax.swing.JButton jButton1;
@@ -651,7 +667,6 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JButton jButton35;
     private javax.swing.JButton jButton37;
     private javax.swing.JButton jButton38;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton40;
     private javax.swing.JButton jButton41;
     private javax.swing.JButton jButton42;

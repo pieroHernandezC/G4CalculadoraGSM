@@ -55,10 +55,13 @@
         <Property name="rows" type="int" value="5"/>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="PotenciaN">
           <Properties>
             <Property name="text" type="java.lang.String" value="X&#x207f;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PotenciaNActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="botonC">
           <Properties>

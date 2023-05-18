@@ -36,7 +36,7 @@ public class Calculadora extends javax.swing.JFrame {
     private void initComponents() {
 
         panel = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        PotenciaN = new javax.swing.JButton();
         botonC = new javax.swing.JButton();
         botonRaiz = new javax.swing.JButton();
         botonDivision = new javax.swing.JButton();
@@ -68,8 +68,13 @@ public class Calculadora extends javax.swing.JFrame {
 
         panel.setLayout(new java.awt.GridLayout(5, 5));
 
-        jButton1.setText("Xⁿ");
-        panel.add(jButton1);
+        PotenciaN.setText("Xⁿ");
+        PotenciaN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PotenciaNActionPerformed(evt);
+            }
+        });
+        panel.add(PotenciaN);
 
         botonC.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         botonC.setText("C");
@@ -466,6 +471,13 @@ public class Calculadora extends javax.swing.JFrame {
                 operacion = "nula";
             }
         }
+        else if(operacion.equals("elevar n")){
+            segundoNumero = Double.parseDouble(cadenaNumeros);
+            resultado = Math.pow(primerNumero, segundoNumero);
+            etiquetaNumeros.setText(String.format("% .2f",resultado));
+            cadenaNumeros = String.valueOf(resultado);
+            operacion = "nula";
+        }
         
         etiquetaMuestra.setText("");
         activado = true;
@@ -565,6 +577,16 @@ public class Calculadora extends javax.swing.JFrame {
             activado = false;
         }
     }//GEN-LAST:event_butonPorcentajeActionPerformed
+    private void PotenciaNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PotenciaNActionPerformed
+        if(activado == true){
+            primerNumero = Double.parseDouble(cadenaNumeros);
+            etiquetaMuestra.setText(cadenaNumeros + " ^ ");
+            cadenaNumeros = "";
+            operacion = "elevar n";
+            
+            activado = false;
+        }
+    }//GEN-LAST:event_PotenciaNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -605,6 +627,7 @@ public class Calculadora extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton PotenciaN;
     private javax.swing.JButton botonC;
     private javax.swing.JButton botonCE;
     private javax.swing.JButton botonDivision;
@@ -618,6 +641,7 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JLabel etiquetaMuestra;
     private javax.swing.JLabel etiquetaNumeros;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;

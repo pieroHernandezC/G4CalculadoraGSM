@@ -609,7 +609,6 @@ public class Calculadora extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botonCEActionPerformed
 
-<<<<<<< HEAD
     private void butonPorcentajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonPorcentajeActionPerformed
                 // TODO add your handling code here:
      if(activado == true){
@@ -659,7 +658,6 @@ public class Calculadora extends javax.swing.JFrame {
         cadenaNumeros = String.valueOf(resultado);
         operacion = "nula";
     }//GEN-LAST:event_botonPotenciaCubicaActionPerformed
-=======
     private void btnInversaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInversaActionPerformed
         primerNumero = Double.parseDouble(cadenaNumeros);
         switch (cadenaNumeros){
@@ -700,7 +698,6 @@ public class Calculadora extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnInversaActionPerformed
->>>>>>> SebastianRamos
 
     /**
      * @param args the command line arguments
@@ -752,12 +749,9 @@ public class Calculadora extends javax.swing.JFrame {
     private javax.swing.JButton botonRaiz;
     private javax.swing.JButton botonRestar;
     private javax.swing.JButton botonSumar;
-<<<<<<< HEAD
     private javax.swing.JButton btnElevarCuadrado;
     private javax.swing.JButton butonPorcentaje;
-=======
     private javax.swing.JButton btnInversa;
->>>>>>> SebastianRamos
     private javax.swing.JLabel etiquetaMuestra;
     private javax.swing.JLabel etiquetaNumeros;
     private javax.swing.JButton jButton28;
